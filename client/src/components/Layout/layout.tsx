@@ -7,9 +7,9 @@ interface LayoutProps {
 
 function Layout({ children }: LayoutProps) {
   return (
-    <div className="min-h-screen bg-eco-surface">
-      <Navbar />
-      <main className="max-w-7xl mx-auto px-4 py-6">
+    <div className="min-h-screen bg-eco-surface lg:flex lg:items-start">
+      <Navbar isSidebar />
+      <main className="flex-1 px-6 py-8 lg:py-10">
         {children}
       </main>
     </div>
