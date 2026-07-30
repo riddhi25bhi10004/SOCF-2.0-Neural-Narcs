@@ -11,9 +11,6 @@ import GridMonitor from './pages/grid/GridMonitor';
 import Hardware from './pages/hardware/hardware';
 import EcoScore from './pages/ecoscore/ecoscore';
 import Reports from './pages/reports/reports';
-import Hardware from './pages/hardware/hardware';
-import EcoScore from './pages/ecoscore/ecoscore';
-import Reports from './pages/reports/reports';
 
 const Landing = lazy(() => import('./pages/landing/Landing'));
 const Login = lazy(() => import('./pages/login/Login')); 
