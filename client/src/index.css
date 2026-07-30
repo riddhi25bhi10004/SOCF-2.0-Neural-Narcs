@@ -75,3 +75,31 @@
     display: none;
   }
 }
+
+/* client/src/index.css */
+
+/* Ensure glass containers don't overflow */
+.glass {
+  overflow: hidden;
+  position: relative;
+}
+
+/* Fix for water flow visualization */
+.water-flow-container {
+  overflow: hidden;
+  position: relative;
+}
+
+/* Particle container */
+.particle-container {
+  overflow: visible;
+  position: absolute;
+  pointer-events: none;
+}
+
+/* Ensure all content stays inside */
+.flow-diagram {
+  overflow: hidden;
+  position: relative;
+  height: 100%;
+}

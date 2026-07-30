@@ -1,6 +1,6 @@
 import express from 'express';
-import type { AppState, Recommendation } from '../data/telemetry';
-import { updateTelemetry, applyRecommendation } from '../services/telemetryService';
+import type { AppState, Recommendation } from '../data/telemetry.js';
+import { updateTelemetry, applyRecommendation } from '../services/telemetryService.js';
 
 let state: AppState;
 
@@ -27,7 +27,7 @@ router.get('/recommendations', (_, res: express.Response) => {
 });
 
 router.post('/recommendations/:id/apply', (req: express.Request, res: express.Response) => {
-  const { id } = req.params;
+  const id = Array.isArray(req.params.id) ? req.params.id[0] : req.params.id;
   const rec = state.recommendations.find((r: Recommendation) => r.id === id);
   if (!rec) return res.status(404).json({ error: 'Recommendation not found' });
   if (rec.applied) return res.status(400).json({ error: 'Already applied' });
@@ -37,7 +37,7 @@ router.post('/recommendations/:id/apply', (req: express.Request, res: express.Re
 });
 
 router.get('/schedule', (req: express.Request, res: express.Response) => {
-  const transform = (jobs: typeof state.schedule.current) => jobs.map(j => ({
+  const transform = (jobs: typeof state.schedule.current) => jobs.map((j: typeof state.schedule.current[number]) => ({
     id: j.id,
     name: j.name,
     type: j.type || 'Batch ETL' as const,
@@ -77,7 +77,7 @@ router.get('/grid', (_, res: express.Response) => {
 
 router.get('/hardware', (_, res: express.Response) => {
   const racks = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2', 'D1', 'E1', 'F1', 'A3', 'B3', 'C3', 'D2', 'E2', 'A4', 'B4'];
-  const transformed = state.hardware.map((h, i) => ({
+  const transformed = state.hardware.map((h: typeof state.hardware[number], i: number) => ({
     id: h.id,
     type: h.type,
     rack: racks[i % racks.length],
@@ -93,12 +93,12 @@ router.get('/ecoscore', (_, res: express.Response) => {
   const e = state.ecoscore;
   res.json({
     overall: e.overall,
-    energyEfficiency: e.categories.find(c => c.name === 'Energy Efficiency')?.score || 78,
-    waterEfficiency: e.categories.find(c => c.name === 'Water Stewardship')?.score || 70,
-    coolingEfficiency: e.categories.find(c => c.name === 'Energy Efficiency')?.score || 78,
-    carbonIntensity: e.categories.find(c => c.name === 'Carbon Footprint')?.score || 74,
-    renewableUsage: e.categories.find(c => c.name === 'Renewable Usage')?.score || 65,
-    hardwareHealth: e.categories.find(c => c.name === 'Hardware Lifecycle')?.score || 68,
+    energyEfficiency: e.categories.find((c: typeof e.categories[number]) => c.name === 'Energy Efficiency')?.score || 78,
+    waterEfficiency: e.categories.find((c: typeof e.categories[number]) => c.name === 'Water Stewardship')?.score || 70,
+    coolingEfficiency: e.categories.find((c: typeof e.categories[number]) => c.name === 'Energy Efficiency')?.score || 78,
+    carbonIntensity: e.categories.find((c: typeof e.categories[number]) => c.name === 'Carbon Footprint')?.score || 74,
+    renewableUsage: e.categories.find((c: typeof e.categories[number]) => c.name === 'Renewable Usage')?.score || 65,
+    hardwareHealth: e.categories.find((c: typeof e.categories[number]) => c.name === 'Hardware Lifecycle')?.score || 68,
   });
 });
 

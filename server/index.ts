@@ -1,27 +1,22 @@
 import express from 'express';
 import cors from 'cors';
-import telemetryRouter, { setState, getState } from './src/routes/telemetry';
-import { createInitialState } from './src/data/telemetry';
-import { updateTelemetry } from './src/services/telemetryService';
-import authRouter from './src/routes/auth'; // ← ADD THIS
+import authRouter from './src/routes/auth.js';
+import telemetryRouter from './src/routes/telemetry.js';
 
 const app = express();
-const PORT = process.env.PORT || 3001;
+const port = process.env.PORT || 3001;
 
 app.use(cors());
 app.use(express.json());
 
+app.use('/api/auth', authRouter);
 app.use('/api', telemetryRouter);
-app.use('/api/auth', authRouter); // ← ADD THIS
 
-setState(createInitialState());
-
-setInterval(() => {
-  const current = getState();
-  const updatedTelemetry = updateTelemetry(current.telemetry);
-  setState({ ...current, telemetry: updatedTelemetry });
-}, 5000);
-
-app.listen(PORT, () => {
-  console.log(`EcoPulse AI Server running on http://localhost:${PORT}`);
+app.get('/', (_, res) => {
+  res.json({ status: 'OK', message: 'EcoPulse AI server is running' });
 });
+
+app.listen(port, () => {
+  console.log(`Server running on http://localhost:${port}`);
+});
+

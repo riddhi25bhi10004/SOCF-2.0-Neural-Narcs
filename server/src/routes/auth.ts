@@ -3,7 +3,7 @@ import {
   findOrCreateGoogleUser,
   findOrCreateUserByEmail,
   generateToken,
-} from '../services/authService';
+} from '../services/authService.js';
 
 const router = express.Router();
 

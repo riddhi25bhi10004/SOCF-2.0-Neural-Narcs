@@ -1,4 +1,4 @@
-import type { AppState, TelemetryState } from '../data/telemetry';
+import type { AppState, TelemetryState } from '../data/telemetry.js';
 
 export function updateTelemetry(state: TelemetryState): TelemetryState {
   const now = new Date();
@@ -73,10 +73,10 @@ export function updateTelemetry(state: TelemetryState): TelemetryState {
 }
 
 export function applyRecommendation(state: AppState, id: string): AppState {
-  const rec = state.recommendations.find(r => r.id === id);
+  const rec = state.recommendations.find((r: typeof state.recommendations[number]) => r.id === id);
   if (!rec || rec.applied) return state;
 
-  const updatedRecs = state.recommendations.map(r =>
+  const updatedRecs = state.recommendations.map((r: typeof state.recommendations[number]) =>
     r.id === id ? { ...r, applied: true, appliedAt: Date.now() } : r
   );
 

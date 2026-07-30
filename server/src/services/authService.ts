@@ -1,4 +1,4 @@
-import { users, User } from '../data/users';
+import { users, User } from '../data/users.js';
 
 export const findUserByCredentials = (
   email: string,
