@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background: linear-gradient(135deg, #fffaf2 0%, #fff7e8 45%, #fdf2d7 100%);
+    color: #3f2e20;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+}
