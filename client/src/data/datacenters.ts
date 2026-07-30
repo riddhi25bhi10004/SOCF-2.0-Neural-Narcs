@@ -15,7 +15,7 @@ const datacenters: DataCenterData[] = [
     electricity: 'Medium',
     water: 'Medium',
     impact: 3,
-    image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80&fm=webp',
+    image: 'https://th.bing.com/th/id/OIP.hS4Hr0FJ6uqpDuIVIgFEhwHaER?w=329&h=188&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3',
     alt: 'Modern enterprise server room with racks and ambient lighting',
   },
   {
@@ -24,7 +24,7 @@ const datacenters: DataCenterData[] = [
     electricity: 'Very High',
     water: 'Very High',
     impact: 5,
-    image: 'https://images.unsplash.com/photo-1517430816045-df4b7de11d1f?auto=format&fit=crop&w=1200&q=80&fm=webp',
+    image: 'https://www.lianjer.com/wp-content/uploads/2025/10/Blue-lit-hyperscale-data-center-with-high-density-server-racks-and-overhead-cable-trays.webp',
     alt: 'Large hyperscale data center with endless server rows and dramatic lighting',
   },
   {
@@ -33,7 +33,7 @@ const datacenters: DataCenterData[] = [
     electricity: 'High',
     water: 'Medium',
     impact: 4,
-    image: 'https://images.unsplash.com/photo-1555633510-2b4e6a6b1fde?auto=format&fit=crop&w=1200&q=80&fm=webp',
+    image: 'https://www.azuraconsultancy.com/wp-content/uploads/2025/07/colocation-data-centers.webp',
     alt: 'Shared colocation server racks in a secure facility',
   },
   {
@@ -42,7 +42,7 @@ const datacenters: DataCenterData[] = [
     electricity: 'Low',
     water: 'Low',
     impact: 2,
-    image: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80&fm=webp',
+    image: 'https://www.lntsmartworld.com/assets/img/edge-data-center.jpg',
     alt: 'Compact edge computing facility near urban infrastructure',
   },
   {
@@ -51,7 +51,7 @@ const datacenters: DataCenterData[] = [
     electricity: 'Low',
     water: 'Low',
     impact: 2,
-    image: 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80&fm=webp',
+    image: 'https://compu-dynamics.com/wp-content/uploads/2025/05/compu-dynamics-modular-data-center-solutions.jpg',
     alt: 'Containerized modular data center with modern cooling and transport-ready design',
   },
   {
@@ -60,7 +60,7 @@ const datacenters: DataCenterData[] = [
     electricity: 'High',
     water: 'Medium',
     impact: 3,
-    image: 'https://images.unsplash.com/photo-1518921350818-0f7c5d4f74a1?auto=format&fit=crop&w=1200&q=80&fm=webp',
+    image: 'https://tse1.mm.bing.net/th/id/OIP.5n6zhrpvY95dV2wSZB3r9wHaEK?r=0&rs=1&pid=ImgDetMain&o=7&rm=3',
     alt: 'Secure government data center with industrial server racks and security lighting',
   },
 ];
