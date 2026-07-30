@@ -1,5 +1,6 @@
 import { NavLink } from 'react-router-dom';
-import { Activity, Brain, Clock, Droplets, Grid3x3, Cpu, Gauge, FileText } from 'lucide-react';
+import { Activity, Brain, Clock, Droplets, Grid3x3, Cpu, Gauge, FileText, LogOut, User } from 'lucide-react'; // ← ADD LogOut, User
+import { useAuth } from '../../context/AuthContext'; // ← ADD THIS
 
 const navItems = [
   { path: '/dashboard', label: 'Dashboard', icon: Activity },
@@ -13,6 +14,12 @@ const navItems = [
 ];
 
 function Navbar() {
+  const { user, logout } = useAuth(); // ← ADD THIS
+
+  const handleLogout = async () => { // ← ADD THIS
+    await logout();
+  };
+
   return (
     <nav className="glass-strong sticky top-0 z-50 px-4 py-3 flex items-center justify-between">
       <NavLink to="/" className="flex items-center gap-2">
@@ -38,6 +45,22 @@ function Navbar() {
             <span className="hidden md:inline">{item.label}</span>
           </NavLink>
         ))}
+      </div>
+      {/* ← ADD THIS USER MENU SECTION */}
+      <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-eco-border/20">
+          <User className="w-3.5 h-3.5 text-eco-muted" />
+          <span className="text-xs font-medium text-eco-dark hidden sm:block">
+            {user?.name || 'User'}
+          </span>
+        </div>
+        <button
+          onClick={handleLogout}
+          className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium text-red-500 hover:bg-red-500/10 transition-colors duration-200"
+        >
+          <LogOut className="w-3.5 h-3.5" />
+          <span className="hidden sm:inline">Logout</span>
+        </button>
       </div>
     </nav>
   );
