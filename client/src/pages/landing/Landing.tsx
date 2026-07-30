@@ -220,16 +220,13 @@ function Landing() {
             <span className="text-lg font-semibold text-[#2f220f]">EcoPulse AI</span>
           </Link>
           <div className="flex items-center gap-4">
-            <Link to="/dashboard" className="text-sm font-medium text-[#7e6143] transition-colors hover:text-[#c97a1d]">Dashboard</Link>
-            <Link to="/advisor" className="text-sm font-medium text-[#7e6143] transition-colors hover:text-[#c97a1d]">Advisor</Link>
-            {/* ← ADDED Login Button */}
             <button 
               onClick={() => navigate('/login')}
               className="inline-flex items-center gap-2 rounded-lg border border-[#c97a1d]/30 bg-[#fff3d8] px-4 py-2 text-sm font-medium text-[#a96b16] transition-all hover:bg-[#f8e5be] hover:shadow-md"
             >
               Sign In
             </button>
-            <Link to="/dashboard" className="btn-primary inline-flex items-center gap-2 px-4 py-2 text-sm">Get Started</Link>
+            <Link to="/scheduler" className="btn-primary inline-flex items-center gap-2 px-4 py-2 text-sm">Get Started</Link>
           </div>
         </div>
       </nav>
@@ -272,12 +269,12 @@ function Landing() {
               EcoPulse turns power, water, cooling, and carbon data into one clear operating system that helps teams cut waste, reduce risk, and think faster.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Link to="/dashboard" className="btn-primary inline-flex items-center justify-center gap-2 text-base">
-                Launch Dashboard
+              <Link to="/scheduler" className="btn-primary inline-flex items-center justify-center gap-2 text-base">
+                Launch Scheduler
                 <ArrowRight className="h-4 w-4" />
               </Link>
-              <Link to="/advisor" className="btn-secondary inline-flex items-center justify-center gap-2 text-base">
-                View Recommendations
+              <Link to="/reports" className="btn-secondary inline-flex items-center justify-center gap-2 text-base">
+                View Reports
               </Link>
             </div>
             <div className="mt-8 grid gap-3 sm:grid-cols-2">
@@ -409,7 +406,7 @@ function Landing() {
           <div className="rounded-[32px] border border-amber-200/80 bg-[#fffdfa]/95 p-8 text-center shadow-[0_20px_80px_rgba(146,92,25,0.16)] backdrop-blur-xl sm:p-12">
             <h2 className="text-3xl font-semibold text-[#2f220f]">Ready to transform your infrastructure?</h2>
             <p className="mx-auto mt-3 max-w-2xl text-[#7e6143]">Join teams that want a clearer view of their operations and a measurable path to lower cost and lower emissions.</p>
-            <Link to="/dashboard" className="btn-primary mt-8 inline-flex items-center gap-2 text-base">
+            <Link to="/scheduler" className="btn-primary mt-8 inline-flex items-center gap-2 text-base">
               Get Started Free
               <ArrowRight className="h-4 w-4" />
             </Link>

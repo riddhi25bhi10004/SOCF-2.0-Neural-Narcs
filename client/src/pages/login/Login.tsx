@@ -18,7 +18,7 @@ const Login: React.FC = () => {
 
   useEffect(() => {
     if (isAuthenticated) {
-      navigate('/dashboard', { replace: true });
+      navigate('/scheduler', { replace: true });
     }
   }, [isAuthenticated, navigate]);
 
@@ -29,7 +29,7 @@ const Login: React.FC = () => {
 
     try {
       await login(email, password);
-      const from = location.state?.from?.pathname || '/dashboard';
+      const from = location.state?.from?.pathname || '/scheduler';
       navigate(from, { replace: true });
     } catch (err: any) {
       setError(err.message || 'Login failed. Please try again.');
@@ -56,7 +56,7 @@ const Login: React.FC = () => {
 
       const displayName = googleEmail.split('@')[0];
       await loginWithGoogle(googleEmail, displayName);
-      navigate('/dashboard', { replace: true });
+      navigate('/scheduler', { replace: true });
     } catch (err: any) {
       setError(err.message || 'Google sign-in failed. Please try again.');
     } finally {

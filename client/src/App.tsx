@@ -1,10 +1,8 @@
 import { lazy, Suspense } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
-import { AuthProvider } from './context/AuthContext'; 
-import ProtectedRoute from './components/Layout/ProtectedRoute'; 
+import { AuthProvider } from './context/AuthContext';
+import ProtectedRoute from './components/Layout/ProtectedRoute';
 import Layout from './components/Layout/layout';
-import Dashboard from './pages/dashboard/dashboard';
-import Advisor from './pages/advisor/advisor';
 import Scheduler from './pages/scheduler/scheduler';
 import Water from './pages/water/water';
 import GridMonitor from './pages/grid/GridMonitor';
@@ -25,16 +23,6 @@ function App() {
           <Route path="/login" element={<Login />} /> {/* ← ADD THIS */}
 
           {/* Protected Routes */}
-          <Route path="/dashboard" element={
-            <ProtectedRoute>
-              <Layout><Dashboard /></Layout>
-            </ProtectedRoute>
-          } />
-          <Route path="/advisor" element={
-            <ProtectedRoute>
-              <Layout><Advisor /></Layout>
-            </ProtectedRoute>
-          } />
           <Route path="/scheduler" element={
             <ProtectedRoute>
               <Layout><Scheduler /></Layout>

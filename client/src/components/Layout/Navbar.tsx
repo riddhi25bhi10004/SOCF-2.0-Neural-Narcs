@@ -3,8 +3,6 @@ import { Activity, Brain, Clock, Droplets, Grid3x3, Cpu, Gauge, FileText, LogOut
 import { useAuth } from '../../context/AuthContext';
 
 const navItems = [
-  { path: '/dashboard', label: 'Dashboard', icon: Activity },
-  { path: '/advisor', label: 'AI Advisor', icon: Brain },
   { path: '/scheduler', label: 'Scheduler', icon: Clock },
   { path: '/water', label: 'Water', icon: Droplets },
   { path: '/grid', label: 'Grid', icon: Grid3x3 },
