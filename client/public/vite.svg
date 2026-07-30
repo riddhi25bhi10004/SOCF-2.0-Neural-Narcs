@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Background -->
+  <rect x="4" y="4" width="56" height="56" rx="12" fill="#0F172A"/>
+
+  <!-- Server Rack -->
+  <rect x="16" y="14" width="24" height="36" rx="4"
+        fill="none"
+        stroke="#E2E8F0"
+        stroke-width="2.5"/>
+
+  <!-- Server Lines -->
+  <line x1="20" y1="22" x2="36" y2="22"
+        stroke="#E2E8F0"
+        stroke-width="2"/>
+  <line x1="20" y1="30" x2="36" y2="30"
+        stroke="#E2E8F0"
+        stroke-width="2"/>
+  <line x1="20" y1="38" x2="36" y2="38"
+        stroke="#E2E8F0"
+        stroke-width="2"/>
+
+  <!-- Status Lights -->
+  <circle cx="22" cy="46" r="1.8" fill="#22C55E"/>
+  <circle cx="28" cy="46" r="1.8" fill="#22C55E"/>
+
+  <!-- Leaf -->
+  <path d="M44 40
+           C54 33 55 22 47 16
+           C39 19 35 30 40 38
+           C41 40 42 41 44 40Z"
+        fill="#22C55E"/>
+
+  <!-- Leaf Vein -->
+  <path d="M41 36
+           C44 31 47 26 49 20"
+        fill="none"
+        stroke="#DCFCE7"
+        stroke-width="1.6"
+        stroke-linecap="round"/>
+</svg>
