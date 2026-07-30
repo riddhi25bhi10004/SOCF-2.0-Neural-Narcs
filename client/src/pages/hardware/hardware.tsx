@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Cpu, Server, HardDrive, Fan, Battery } from 'lucide-react';
 import { fetchHardware } from '../../services/api';
-import type { HardwareComponent } from '../../types';
+import type { HardwareComponent } from '../../types/index';
 import HealthBar from '../../components/chart/HealthBar';
 
 const componentIcons = {

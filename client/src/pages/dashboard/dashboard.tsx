@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Activity, Droplets, Snowflake, Cloud, Wind, Thermometer, Gauge } from 'lucide-react';
 import { fetchTelemetry } from '../../services/api';
-import type { TelemetryData } from '../../types';
+import type { TelemetryData } from '../../types/index';
 import MetricCard from '../../components/ui/MetricCard';
 import LineChart from '../../components/chart/LineChart';
 import GaugeChart from '../../components/chart/GaugeChart';

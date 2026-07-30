@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Clock, Wand2, TrendingDown, Server, Zap } from 'lucide-react';
 import { fetchSchedule } from '../../services/api';
-import type { Job } from '../../types';
+import type { Job } from '../../types/index';
 import LineChart from '../../components/chart/LineChart';
 
 function Scheduler() {

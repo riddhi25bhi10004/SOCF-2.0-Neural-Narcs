@@ -3,12 +3,12 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import Layout from './components/Layout/layout';
 import Dashboard from './pages/dashboard/Dashboard';
 import Advisor from './pages/advisor/Advisor';
-import Scheduler from './pages/scheduler/Scheduler';
-import Water from './pages/water/Water';
+import Scheduler from './pages/scheduler/scheduler';
+import Water from './pages/water/water';
 import GridMonitor from './pages/grid/GridMonitor';
-import Hardware from './pages/hardware/Hardware';
-import EcoScore from './pages/ecoscore/EcoScore';
-import Reports from './pages/reports/Reports';
+import Hardware from './pages/hardware/hardware';
+import EcoScore from './pages/ecoscore/ecoscore';
+import Reports from './pages/reports/reports';
 
 const Landing = lazy(() => import('./pages/landing/Landing'));
 
