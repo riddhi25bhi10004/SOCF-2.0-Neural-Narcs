@@ -1,19 +1,69 @@
-import { users, User } from '../data/user';
+import { users, User } from '../data/users';
 
 export const findUserByCredentials = (
   email: string,
   password: string
 ): Omit<User, 'password'> | null => {
+  const normalizedEmail = email.trim().toLowerCase();
   const user = users.find(
-    (u: User) => u.email === email && u.password === password
+    (u: User) => u.email.toLowerCase() === normalizedEmail && u.password === password
   );
 
   if (!user) {
     return null;
   }
 
-  // Remove password before returning
   const { password: _password, ...userWithoutPassword } = user;
+  return userWithoutPassword;
+};
+
+export const findOrCreateUserByEmail = (
+  email: string,
+  name?: string,
+  password?: string
+): Omit<User, 'password'> => {
+  const normalizedEmail = email.trim().toLowerCase();
+  const existingUser = users.find((u: User) => u.email.toLowerCase() === normalizedEmail);
+
+  if (existingUser) {
+    const { password: _password, ...userWithoutPassword } = existingUser;
+    return userWithoutPassword;
+  }
+
+  const newUser: User = {
+    id: `user-${Date.now()}`,
+    email: normalizedEmail,
+    password: password || '',
+    name: name || normalizedEmail.split('@')[0],
+    role: 'user',
+  };
+
+  users.push(newUser);
+  const { password: _password, ...userWithoutPassword } = newUser;
+  return userWithoutPassword;
+};
+
+export const findOrCreateGoogleUser = (
+  email: string,
+  name?: string
+): Omit<User, 'password'> => {
+  const existingUser = users.find((u: User) => u.email === email);
+
+  if (existingUser) {
+    const { password: _password, ...userWithoutPassword } = existingUser;
+    return userWithoutPassword;
+  }
+
+  const googleUser: User = {
+    id: `google-${Date.now()}`,
+    email,
+    password: '',
+    name: name || email.split('@')[0],
+    role: 'user',
+  };
+
+  users.push(googleUser);
+  const { password: _password, ...userWithoutPassword } = googleUser;
   return userWithoutPassword;
 };
 

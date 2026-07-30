@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation, Link } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import { motion } from 'framer-motion';
-import { Loader2, Leaf, Eye, EyeOff, Check } from 'lucide-react';
+import { Loader2, Leaf, Eye, EyeOff, Check, Chrome } from 'lucide-react';
 
 const Login: React.FC = () => {
   const [email, setEmail] = useState('');
@@ -12,7 +12,7 @@ const Login: React.FC = () => {
   const [rememberMe, setRememberMe] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   
-  const { login, isAuthenticated } = useAuth();
+  const { login, loginWithGoogle, isAuthenticated } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -41,6 +41,27 @@ const Login: React.FC = () => {
   const handleDemoLogin = () => {
     setEmail('admin@ecopulse.ai');
     setPassword('password123');
+  };
+
+  const handleGoogleLogin = async () => {
+    setError('');
+    setIsLoading(true);
+
+    try {
+      const googleEmail = (email.trim() || window.prompt('Enter your Google email', 'google.user@ecopulse.ai') || '').trim().toLowerCase();
+      if (!googleEmail) {
+        setError('Google login was cancelled.');
+        return;
+      }
+
+      const displayName = googleEmail.split('@')[0];
+      await loginWithGoogle(googleEmail, displayName);
+      navigate('/dashboard', { replace: true });
+    } catch (err: any) {
+      setError(err.message || 'Google sign-in failed. Please try again.');
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -165,6 +186,27 @@ const Login: React.FC = () => {
               ) : (
                 'Sign In'
               )}
+            </motion.button>
+
+            <div className="relative">
+              <div className="absolute inset-0 flex items-center">
+                <div className="w-full border-t border-slate-700/70"></div>
+              </div>
+              <div className="relative flex justify-center text-xs uppercase tracking-[0.25em] text-slate-500">
+                <span className="bg-slate-800/40 px-3">Or</span>
+              </div>
+            </div>
+
+            <motion.button
+              type="button"
+              onClick={handleGoogleLogin}
+              disabled={isLoading}
+              whileHover={!isLoading ? { scale: 1.02 } : {}}
+              whileTap={!isLoading ? { scale: 0.98 } : {}}
+              className="w-full py-3 border border-slate-600 bg-slate-900/50 text-slate-100 font-semibold rounded-xl hover:border-emerald-400 hover:bg-slate-900 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+            >
+              <Chrome className="w-5 h-5" />
+              Continue with Google
             </motion.button>
 
             <motion.div 

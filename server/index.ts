@@ -3,6 +3,7 @@ import cors from 'cors';
 import telemetryRouter, { setState, getState } from './src/routes/telemetry';
 import { createInitialState } from './src/data/telemetry';
 import { updateTelemetry } from './src/services/telemetryService';
+import authRouter from './src/routes/auth'; // ← ADD THIS
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -11,6 +12,7 @@ app.use(cors());
 app.use(express.json());
 
 app.use('/api', telemetryRouter);
+app.use('/api/auth', authRouter); // ← ADD THIS
 
 setState(createInitialState());
 

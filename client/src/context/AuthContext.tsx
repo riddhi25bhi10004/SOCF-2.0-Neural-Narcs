@@ -12,6 +12,7 @@ interface AuthContextType {
   user: User | null;
   token: string | null;
   login: (email: string, password: string) => Promise<void>;
+  loginWithGoogle: (email: string, name?: string) => Promise<void>;
   logout: () => Promise<void>;
 }
 
@@ -21,22 +22,67 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
   const [user, setUser] = useState<User | null>(null);
   const [token, setToken] = useState<string | null>(null);
 
+  const parseJsonResponse = async (response: Response) => {
+    const text = await response.text();
+    if (!text) {
+      return null;
+    }
+
+    try {
+      return JSON.parse(text);
+    } catch {
+      return { error: text };
+    }
+  };
+
   const login = async (email: string, password: string) => {
+    const normalizedEmail = email.trim().toLowerCase();
     try {
       const response = await fetch('/api/auth/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ email, password }),
+        body: JSON.stringify({ email: normalizedEmail, password }),
       });
 
+      const data = await parseJsonResponse(response);
+
       if (!response.ok) {
-        const error = await response.json();
-        throw new Error(error.error || 'Invalid email or password');
+        throw new Error(data?.error || 'Invalid email or password');
       }
 
-      const data = await response.json();
+      if (!data?.user || !data?.token) {
+        throw new Error('Invalid server response');
+      }
+
+      setUser(data.user);
+      setToken(data.token);
+    } catch (error) {
+      throw error;
+    }
+  };
+
+  const loginWithGoogle = async (email: string, name?: string) => {
+    try {
+      const response = await fetch('/api/auth/google', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email, name }),
+      });
+
+      const data = await parseJsonResponse(response);
+
+      if (!response.ok) {
+        throw new Error(data?.error || 'Unable to sign in with Google');
+      }
+
+      if (!data?.user || !data?.token) {
+        throw new Error('Invalid server response');
+      }
+
       setUser(data.user);
       setToken(data.token);
     } catch (error) {
@@ -67,6 +113,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
         user,
         token,
         login,
+        loginWithGoogle,
         logout,
       }}
     >
