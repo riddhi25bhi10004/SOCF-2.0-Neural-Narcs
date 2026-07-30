@@ -3,7 +3,7 @@ import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import { Float } from '@react-three/drei';
 import { motion } from 'framer-motion';
 import { Link, useNavigate } from 'react-router-dom'; // ← CHANGED: added useNavigate
-import { ArrowRight, Sparkles, Server, Zap, Droplets, Leaf, ChevronDown, Activity, ShieldCheck, Cpu, Gauge } from 'lucide-react';
+import { ArrowRight, Sparkles, Server, Zap, Droplets, Leaf, ChevronDown, Activity, ShieldCheck, Gauge } from 'lucide-react';
 import * as THREE from 'three';
 import ErrorBoundary from '../../components/ErrorBoundary';
 import DataCenterSection from '../../components/DataCenterSection';
@@ -179,12 +179,7 @@ const challenges = [
   { title: 'Carbon Impact', desc: 'Unoptimized grid draw increases carbon footprint and risks non-compliance with ESG mandates.', icon: <Leaf className="w-7 h-7 text-[#b86b1f]" />, img: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80' },
 ];
 
-const benefits = [
-  { icon: <Server className="w-6 h-6" />, title: 'Intelligent Optimization', desc: 'AI-driven workload scheduling reduces energy waste while preserving performance SLAs.' },
-  { icon: <Activity className="w-6 h-6" />, title: 'Real-Time Monitoring', desc: 'Live telemetry across power, water, cooling, and carbon metrics with sub-second clarity.' },
-  { icon: <Cpu className="w-6 h-6" />, title: 'Predictive Planning', desc: 'Forecast demand and shift workloads intelligently around renewable availability and load peaks.' },
-  { icon: <ShieldCheck className="w-6 h-6" />, title: 'Sustainability Reporting', desc: 'Automated ESG-ready reporting and actionable recommendations that teams can act on immediately.' },
-];
+
 
 const prithviDefs = [
   {
