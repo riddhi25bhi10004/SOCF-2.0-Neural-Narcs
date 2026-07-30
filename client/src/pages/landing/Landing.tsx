@@ -6,6 +6,7 @@ import { Link, useNavigate } from 'react-router-dom'; // ← CHANGED: added useN
 import { ArrowRight, Sparkles, Server, Zap, Droplets, Leaf, ChevronDown, Activity, ShieldCheck, Cpu, Gauge } from 'lucide-react';
 import * as THREE from 'three';
 import ErrorBoundary from '../../components/ErrorBoundary';
+import DataCenterSection from '../../components/DataCenterSection';
 
 function AnimatedCounter({ target, duration = 2000 }: { target: number; duration?: number }) {
   const [count, setCount] = useState(0);
@@ -340,6 +341,8 @@ function Landing() {
           <ChevronDown className="h-6 w-6 animate-bounce text-[#9a6b2f]" />
         </motion.div>
       </section>
+
+      <DataCenterSection />
 
       <section className="mx-auto max-w-6xl px-4 py-20">
         <ScrollReveal>
