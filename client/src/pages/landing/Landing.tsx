@@ -186,6 +186,44 @@ const benefits = [
   { icon: <ShieldCheck className="w-6 h-6" />, title: 'Sustainability Reporting', desc: 'Automated ESG-ready reporting and actionable recommendations that teams can act on immediately.' },
 ];
 
+const prithviDefs = [
+  {
+    icon: <Server className="w-6 h-6" />,
+    title: 'P — Performance Assurance',
+    desc: 'AI-driven scheduling and hardware-aware placement that preserve SLAs while minimizing energy draw through predictive scaling.',
+  },
+  {
+    icon: <ShieldCheck className="w-6 h-6" />,
+    title: 'R — Resilience',
+    desc: 'Continuous anomaly detection, automated remediation playbooks, and outage simulations to keep services available.',
+  },
+  {
+    icon: <Activity className="w-6 h-6" />,
+    title: 'I — Insights',
+    desc: 'Explainable analytics and root-cause diagnostics turn telemetry into concise, prioritized actions for operators.',
+  },
+  {
+    icon: <Gauge className="w-6 h-6" />,
+    title: 'T — Transparency',
+    desc: 'Unified metrics, audit trails, and automated ESG reports provide clear, auditable views of performance and impact.',
+  },
+  {
+    icon: <Leaf className="w-6 h-6" />,
+    title: 'H — Holistic Efficiency',
+    desc: 'Multi-objective optimization balances energy, water, and carbon trade-offs across workloads and cooling systems.',
+  },
+  {
+    icon: <Gauge className="w-6 h-6" />,
+    title: 'V — Visibility',
+    desc: 'End-to-end observability across power, water, cooling and grid signals surfaces hidden waste and hotspots.',
+  },
+  {
+    icon: <Sparkles className="w-6 h-6" />,
+    title: 'I — Integration',
+    desc: 'Open connectors, APIs and adapters integrate with BMS, cloud, schedulers and third-party tools for seamless automation.',
+  },
+];
+
 function ScrollReveal({ children }: { children: React.ReactNode }) {
   return (
     <motion.div
@@ -373,12 +411,12 @@ function Landing() {
           <ScrollReveal>
             <div className="mb-10 text-center">
               <h2 className="section-title">Why PRITHVI</h2>
-              <p className="mx-auto max-w-2xl text-[#7e6143]">A calm, intelligent interface that turns raw telemetry into action without overwhelming operators.</p>
+              <p className="mx-auto max-w-2xl text-[#7e6143]">PRITHVI maps our product capabilities to measurable operational outcomes and explains how we deliver them.</p>
             </div>
           </ScrollReveal>
           <ScrollReveal>
-            <div className="grid gap-6 md:grid-cols-2">
-              {benefits.map((item, i) => (
+            <div className="grid gap-6 md:grid-cols-3">
+              {prithviDefs.map((item, i) => (
                 <motion.div
                   key={i}
                   initial={{ opacity: 0, x: i % 2 === 0 ? -20 : 20 }}
