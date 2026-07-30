@@ -12,7 +12,6 @@ import type {
 
 class GridService {
   private static instance: GridService;
-  private simulationMode = false;
 
   static getInstance() {
     if (!this.instance) {

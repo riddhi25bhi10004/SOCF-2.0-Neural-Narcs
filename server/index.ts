@@ -17,7 +17,7 @@ app.use('/api/auth', authRouter);
 app.use('/api', telemetryRouter);
 
 app.get('/', (_, res) => {
-  res.json({ status: 'OK', message: 'EcoPulse AI server is running' });
+  res.json({ status: 'OK', message: 'PRITHVI server is running' });
 });
 
 app.listen(port, () => {

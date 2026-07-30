@@ -39,7 +39,7 @@ const Login: React.FC = () => {
   };
 
   const handleDemoLogin = () => {
-    setEmail('admin@ecopulse.ai');
+    setEmail('admin@prithvi.ai');
     setPassword('password123');
   };
 
@@ -48,7 +48,7 @@ const Login: React.FC = () => {
     setIsLoading(true);
 
     try {
-      const googleEmail = (email.trim() || window.prompt('Enter your Google email', 'google.user@ecopulse.ai') || '').trim().toLowerCase();
+      const googleEmail = (email.trim() || window.prompt('Enter your Google email', 'google.user@prithvi.ai') || '').trim().toLowerCase();
       if (!googleEmail) {
         setError('Google login was cancelled.');
         return;
@@ -88,7 +88,7 @@ const Login: React.FC = () => {
               <div className="flex items-center justify-center w-11 h-11 rounded-full bg-eco-primary text-white shadow-[0_12px_30px_rgba(201,122,29,0.25)]">
                 <Leaf className="w-6 h-6" />
               </div>
-              <span className="text-xs font-semibold uppercase tracking-[0.45em]">EcoPulse AI</span>
+              <span className="text-xs font-semibold uppercase tracking-[0.45em]">PRITHVI</span>
             </div>
             <h1 className="text-3xl font-semibold text-eco-dark tracking-tight">Welcome back</h1>
             <p className="text-sm text-eco-muted mt-2">Sign in to access the saffron-gold sustainability dashboard.</p>
@@ -105,7 +105,7 @@ const Login: React.FC = () => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 className="w-full px-4 py-3 bg-white border border-eco-border rounded-2xl text-eco-text placeholder-eco-muted focus:outline-none focus:ring-2 focus:ring-eco-primary/30 focus:border-eco-primary transition-all duration-200 shadow-sm"
-                placeholder="admin@ecopulse.ai"
+                placeholder="admin@prithvi.ai"
                 required
                 disabled={isLoading}
               />
@@ -220,7 +220,7 @@ const Login: React.FC = () => {
               <div className="text-center">
                 <p className="text-xs text-eco-muted mb-2">Demo Credentials</p>
                 <div className="flex items-center justify-center gap-3 text-sm flex-wrap">
-                  <span className="font-mono text-eco-primary">admin@ecopulse.ai</span>
+                  <span className="font-mono text-eco-primary">admin@prithvi.ai</span>
                   <span className="text-eco-muted">/</span>
                   <span className="font-mono text-eco-primary">password123</span>
                 </div>

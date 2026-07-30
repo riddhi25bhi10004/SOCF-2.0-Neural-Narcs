@@ -1,6 +1,6 @@
 // client/src/components/grid/GridMetrics.tsx
 import { motion } from 'framer-motion';
-import { Activity, Zap, Gauge, Thermometer, TrendingUp, TrendingDown } from 'lucide-react';
+import { Activity, Zap, Gauge, Thermometer, TrendingUp } from 'lucide-react';
 import type { GridMetrics as GridMetricsType } from '../../types';
 
 interface GridMetricsProps {

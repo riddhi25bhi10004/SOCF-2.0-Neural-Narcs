@@ -1,6 +1,5 @@
 import { useMemo } from 'react';
 import { useNavigate, useParams, Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
 import { Cpu, Zap, Droplets, ShieldCheck, ArrowRight, Globe } from 'lucide-react';
 import datacenters from '../../data/datacenters';
 

@@ -217,7 +217,7 @@ function Landing() {
             <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-[#c97a1d] to-[#e8bb4f]">
               <Zap className="h-4 w-4 text-white" />
             </div>
-            <span className="text-lg font-semibold text-[#2f220f]">EcoPulse AI</span>
+            <span className="text-lg font-semibold text-[#2f220f]">PRITHVI</span>
           </Link>
           <div className="flex items-center gap-4">
             <button 
@@ -266,7 +266,7 @@ function Landing() {
               The intelligent command center for <span className="text-gradient">sustainable infrastructure</span>.
             </h1>
             <p className="mt-5 max-w-xl text-lg text-[#6e5335]">
-              EcoPulse turns power, water, cooling, and carbon data into one clear operating system that helps teams cut waste, reduce risk, and think faster.
+              PRITHVI turns power, water, cooling, and carbon data into one clear operating system that helps teams cut waste, reduce risk, and think faster.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link to="/scheduler" className="btn-primary inline-flex items-center justify-center gap-2 text-base">
@@ -372,7 +372,7 @@ function Landing() {
         <div className="mx-auto max-w-6xl px-4">
           <ScrollReveal>
             <div className="mb-10 text-center">
-              <h2 className="section-title">Why EcoPulse</h2>
+              <h2 className="section-title">Why PRITHVI</h2>
               <p className="mx-auto max-w-2xl text-[#7e6143]">A calm, intelligent interface that turns raw telemetry into action without overwhelming operators.</p>
             </div>
           </ScrollReveal>
@@ -420,9 +420,9 @@ function Landing() {
             <div className="flex h-6 w-6 items-center justify-center rounded bg-gradient-to-br from-[#c97a1d] to-[#e8bb4f]">
               <Zap className="h-3 w-3 text-white" />
             </div>
-            <span className="text-sm font-medium text-[#5a3c21]">EcoPulse AI</span>
+            <span className="text-sm font-medium text-[#5a3c21]">PRITHVI</span>
           </div>
-          <p className="text-xs text-[#8b6f4f]">&copy; 2026 EcoPulse AI. All rights reserved.</p>
+          <p className="text-xs text-[#8b6f4f]">&copy; 2026 PRITHVI. All rights reserved.</p>
         </div>
       </footer>
     </div>

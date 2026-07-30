@@ -36,7 +36,7 @@ function Header() {
               <Activity className="h-6 w-6 text-white" />
             </div>
             <div>
-              <h1 className="text-xl font-bold text-eco-dark tracking-tight">EcoPulse Operations Center</h1>
+              <h1 className="text-xl font-bold text-eco-dark tracking-tight">PRITHVI Operations Center</h1>
               <p className="text-xs text-eco-muted mt-0.5">Sustainable Data Center Management Platform</p>
             </div>
           </div>

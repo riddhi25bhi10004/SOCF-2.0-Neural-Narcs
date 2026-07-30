@@ -1,6 +1,6 @@
 // client/src/components/grid/AIDecisionCenter.tsx
 import { motion } from 'framer-motion';
-import { Brain, CheckCircle2, ChevronRight, Sparkles, TrendingUp } from 'lucide-react';
+import { Brain, CheckCircle2, ChevronRight, Sparkles } from 'lucide-react';
 import type { GridDecision } from '../../types';
 
 interface AIDecisionCenterProps {

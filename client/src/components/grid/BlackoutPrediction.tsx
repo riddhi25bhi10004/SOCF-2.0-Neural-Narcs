@@ -1,6 +1,6 @@
 // client/src/components/grid/BlackoutPrediction.tsx
 import { motion } from 'framer-motion';
-import { AlertTriangle, Clock, TrendingUp, Shield } from 'lucide-react';
+import { AlertTriangle, Clock, Shield } from 'lucide-react';
 import type { BlackoutPrediction } from '../../types';
 
 interface BlackoutPredictionProps {

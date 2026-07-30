@@ -9,14 +9,14 @@ export interface User {
 export const users: User[] = [
   {
     id: '1',
-    email: 'admin@ecopulse.ai',
+    email: 'admin@prithvi.ai',
     password: 'password123',
     name: 'Admin User',
     role: 'admin',
   },
   {
     id: '2',
-    email: 'demo@ecopulse.ai',
+    email: 'demo@prithvi.ai',
     password: 'demo123',
     name: 'Demo User',
     role: 'user',

@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import { Activity, Brain, Clock, Droplets, Grid3x3, Cpu, Gauge, FileText, LogOut, User } from 'lucide-react';
+import { Activity, Clock, Droplets, Grid3x3, Cpu, Gauge, FileText, LogOut, User } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
 
 const navItems = [
@@ -35,17 +35,18 @@ function Navbar({ isSidebar = false }: NavbarProps) {
           <div className={isSidebar ? 'w-10 h-10 rounded-3xl bg-eco-primary/15 flex items-center justify-center shadow-sm shadow-eco-primary/20' : 'w-8 h-8 rounded-lg bg-eco-primary/20 flex items-center justify-center'}>
             <Activity className="w-5 h-5 text-eco-primary" />
           </div>
-          <span className={isSidebar ? 'text-xl font-semibold text-eco-dark' : 'text-lg font-semibold text-eco-dark hidden sm:block'}>
-            EcoPulse
-          </span>
-        </NavLink>
-
-        {isSidebar ? (
-          <div className="space-y-1">
-            <div className="text-xs uppercase tracking-[0.3em] text-eco-muted">Navigation</div>
-            <div className="h-0.5 w-14 rounded-full bg-eco-primary/20" />
+          <div className={isSidebar ? 'space-y-1' : 'flex items-center gap-2'}>
+            <span className={isSidebar ? 'text-xl font-semibold text-eco-dark' : 'text-lg font-semibold text-eco-dark hidden sm:block'}>
+              PRITHVI
+            </span>
+            {isSidebar && (
+              <>
+                <div className="text-xs uppercase tracking-[0.3em] text-eco-muted">Navigation</div>
+                <div className="h-0.5 w-14 rounded-full bg-eco-primary/20" />
+              </>
+            )}
           </div>
-        ) : null}
+        </NavLink>
       </div>
 
       <div className={isSidebar ? 'flex flex-col gap-2 overflow-y-auto pr-1' : 'flex items-center gap-1 overflow-x-auto scrollbar-hide'}>

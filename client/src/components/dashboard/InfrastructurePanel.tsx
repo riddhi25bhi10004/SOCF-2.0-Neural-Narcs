@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Server, Cpu, HardDrive, Network, Fan, Battery, Zap, Activity } from 'lucide-react';
-import HealthBar from '../charts/HealthBar';
+import HealthBar from '../chart/HealthBar';
 
 interface InfrastructureItem {
   label: string;
