@@ -1,6 +1,6 @@
 // client/src/components/water/AIRecommendationCard.tsx
 import { motion } from 'framer-motion';
-import { Lightbulb, Zap, Clock, ChevronRight, TrendingUp } from 'lucide-react';
+import { Lightbulb, Zap, ChevronRight, TrendingUp } from 'lucide-react';
 
 interface Recommendation {
   title: string;

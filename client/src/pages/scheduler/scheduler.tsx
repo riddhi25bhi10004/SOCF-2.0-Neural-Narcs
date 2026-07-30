@@ -1,10 +1,8 @@
 // client/src/pages/scheduler/Scheduler.tsx
-import { useState, useEffect, useRef } from 'react';
-import { motion, AnimatePresence, LayoutGroup } from 'framer-motion';
+import { useState, useEffect } from 'react';
+import { motion, LayoutGroup } from 'framer-motion';
 import { 
-  Clock, Wand2, TrendingDown, Server, Zap, 
-  Cpu, Activity, ArrowRight, AlertCircle,
-  CheckCircle2, Sparkles, Gauge, Leaf
+  Server, Zap, Activity, Leaf, Cpu, Wand2, CheckCircle2
 } from 'lucide-react';
 import { fetchSchedule } from '../../services/api';
 import type { Job } from '../../types/index';
@@ -65,7 +63,10 @@ function Scheduler() {
 
   const findPeakHours = (jobs: Job[]) => {
     // Simple peak detection - enhance with real logic
-    return { start: '14:00', end: '17:00' };
+    if (!jobs.length) return { start: '14:00', end: '17:00' };
+    const start = jobs[0].start || '14:00';
+    const end = jobs[jobs.length - 1].end || '17:00';
+    return { start, end };
   };
 
   const handleOptimize = async () => {
@@ -237,7 +238,6 @@ function Scheduler() {
 
       {/* Carbon Heatmap */}
       <CarbonHeatmap 
-        jobs={displayJobs}
         isOptimized={isOptimized}
       />
 

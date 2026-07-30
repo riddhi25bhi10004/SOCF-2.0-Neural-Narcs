@@ -1,13 +1,11 @@
 // client/src/components/scheduler/CarbonHeatmap.tsx
 import { motion } from 'framer-motion';
-import type { Job } from '../../types/index';
 
 interface CarbonHeatmapProps {
-  jobs: Job[];
   isOptimized: boolean;
 }
 
-export default function CarbonHeatmap({ jobs, isOptimized }: CarbonHeatmapProps) {
+export default function CarbonHeatmap({ isOptimized }: CarbonHeatmapProps) {
   // Simulate rack data with carbon intensity
   const racks = [
     { id: 'Rack A', carbonIntensity: isOptimized ? 0.2 : 0.8, status: 'low' },

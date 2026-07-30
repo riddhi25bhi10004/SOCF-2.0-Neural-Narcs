@@ -1,6 +1,6 @@
 // client/src/components/water/AIWaterStatus.tsx
 import { motion } from 'framer-motion';
-import { Droplets, Zap, Shield, Gauge, Sparkles, Activity } from 'lucide-react';
+import { Droplets, Gauge, Sparkles, Activity } from 'lucide-react';
 
 // ===== DEFINE TYPES LOCALLY =====
 interface WaterQuality {

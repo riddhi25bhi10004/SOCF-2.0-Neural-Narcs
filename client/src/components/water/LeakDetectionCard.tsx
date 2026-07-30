@@ -1,7 +1,7 @@
 // client/src/components/water/LeakDetectionCard.tsx
 import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Shield, CheckCircle2, AlertCircle, Activity, Clock, Zap, AlertTriangle, Droplets } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Shield, CheckCircle2, AlertCircle, Activity, AlertTriangle, Droplets } from 'lucide-react';
 
 interface LeakDetectionCardProps {
   risk?: number;

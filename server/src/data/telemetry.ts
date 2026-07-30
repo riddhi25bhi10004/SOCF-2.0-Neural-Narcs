@@ -40,11 +40,25 @@ export interface ScheduleData {
   savings: { energy: string; carbon: string };
 }
 
+export interface WaterRecommendation {
+  title: string;
+  saving: number;
+  priority: 'High' | 'Medium' | 'Low';
+  reason: string;
+}
+
 export interface WaterData {
   currentUsage: number;
   breakdown: { coolingTowers: number; chillers: number; adiabatic: number };
-  weather: { temp: number; humidity: number; wetBulb: number };
-  recommendations: string[];
+  weather: {
+    temp: number;
+    humidity: number;
+    wetBulb: number;
+    coolingDemand: string;
+    rainProbability: number;
+    windSpeed: number;
+  };
+  recommendations: WaterRecommendation[];
 }
 
 export interface GridData {
@@ -144,8 +158,28 @@ export const initialSchedule: { current: ScheduleJob[]; optimized: ScheduleJob[]
 export const initialWater: WaterData = {
   currentUsage: 4800,
   breakdown: { coolingTowers: 2800, chillers: 1500, adiabatic: 500 },
-  weather: { temp: 32, humidity: 45, wetBulb: 22 },
-  recommendations: ['Enable adiabatic pre-cooling during afternoon peaks', 'Monitor cooling tower drift eliminators'],
+  weather: {
+    temp: 22.4,
+    humidity: 58,
+    wetBulb: 18,
+    coolingDemand: 'Low',
+    rainProbability: 74,
+    windSpeed: 12,
+  },
+  recommendations: [
+    {
+      title: 'Enable adiabatic pre-cooling during afternoon peaks',
+      saving: 95,
+      priority: 'Medium',
+      reason: 'Storage tank reached 85% capacity and outside conditions are favorable',
+    },
+    {
+      title: 'Monitor cooling tower drift eliminators',
+      saving: 40,
+      priority: 'Low',
+      reason: 'Prevent unnecessary water loss through tower drift',
+    },
+  ],
 };
 
 export const initialGrid: GridData = {

@@ -1,6 +1,6 @@
 // client/src/components/water/WaterQualityCard.tsx
 import { motion } from 'framer-motion';
-import { Droplets, CheckCircle2, AlertCircle, XCircle } from 'lucide-react';
+import { Droplets, CheckCircle2, XCircle } from 'lucide-react';
 
 interface Quality {
   ph: number;

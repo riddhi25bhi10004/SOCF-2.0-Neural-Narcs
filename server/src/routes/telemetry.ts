@@ -59,9 +59,43 @@ router.get('/water', (_, res: express.Response) => {
     totalUsage: w.currentUsage,
     recyclingRate: 92,
     pueImpact: 1.38,
-    breakdown: w.breakdown,
-    weather: w.weather,
+    waterSaved: 842,
+    coolingEfficiency: 96,
+    leakRisk: 12,
+    aiConfidence: 98,
+    storageLevel: 72,
+    quality: {
+      ph: 7.2,
+      purity: 98,
+      coolingSafe: true,
+    },
     recommendations: w.recommendations,
+    beforeAI: 4200,
+    afterAI: 3842,
+    weather: {
+      temp: w.weather.temp,
+      humidity: w.weather.humidity,
+      rainProbability: w.weather.rainProbability,
+      coolingDemand: w.weather.coolingDemand,
+      windSpeed: w.weather.windSpeed,
+    },
+    decisions: [
+      { action: 'Cooling tower flow reduced', reason: 'Outside temperature decreased', confidence: 98 },
+      { action: 'Greywater redirected', reason: 'Storage tank reached 85%', confidence: 96 },
+      { action: 'Rainwater harvesting enabled', reason: 'Rain forecast detected', confidence: 94 },
+    ],
+    forecast: {
+      rainExpected: true,
+      estimatedHarvest: 1420,
+      confidence: 91,
+      timeFrame: 'Tomorrow',
+    },
+    environmentalImpact: {
+      waterSaved: 842,
+      carbonReduced: 12,
+      energySaved: 18,
+    },
+    breakdown: w.breakdown,
   });
 });
 

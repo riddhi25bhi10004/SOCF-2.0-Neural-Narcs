@@ -1,6 +1,6 @@
 // client/src/components/scheduler/AIStatusCard.tsx
 import { motion } from 'framer-motion';
-import { Sparkles, TrendingDown, Clock, AlertCircle, Cpu, Gauge, Leaf, CheckCircle2 } from 'lucide-react';
+import { Sparkles, AlertCircle, Cpu, Gauge, Leaf, CheckCircle2 } from 'lucide-react';
 
 interface AIStatusProps {
   status: {

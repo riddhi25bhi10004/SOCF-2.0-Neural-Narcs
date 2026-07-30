@@ -1,5 +1,5 @@
 // client/src/components/scheduler/GanttChart.tsx
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import type { Job } from '../../types/index';
 
 interface GanttChartProps {
