@@ -174,8 +174,8 @@ const statItems = [
 ];
 
 const challenges = [
-  { title: 'Energy Waste', desc: 'Data centers waste up to 30% of consumed energy through inefficient cooling and unoptimized workloads.', icon: <Zap className="w-7 h-7 text-[#c97a1d]" />, img: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=600&q=80' },
-  { title: 'Water Overuse', desc: 'Traditional cooling consumes millions of liters annually with no real-time optimization.', icon: <Droplets className="w-7 h-7 text-[#6d8b3d]" />, img: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=600&q=80' },
+  { title: 'Energy Waste', desc: 'Data centers waste up to 30% of consumed energy through inefficient cooling and unoptimized workloads.', icon: <Zap className="w-7 h-7 text-[#c97a1d]" />, img: 'https://img-cdn.publive.online/fit-in/1280x960/filters:format(webp)/pcq/media/media_files/2026/03/19/the-real-reason-data-centres-waste-energy-in-india-2026-03-19-14-19-12.jpg' },
+  { title: 'Water Overuse', desc: 'Traditional cooling consumes millions of liters annually with no real-time optimization.', icon: <Droplets className="w-7 h-7 text-[#6d8b3d]" />, img: 'https://blog.zutacore.com/hubfs/AI-Generated%20Media/Images/gallons%20of%20water%20being%20pumped%20into%20a%20data%20center%20to%20cool%20the%20servers-1.jpeg' },
   { title: 'Carbon Impact', desc: 'Unoptimized grid draw increases carbon footprint and risks non-compliance with ESG mandates.', icon: <Leaf className="w-7 h-7 text-[#b86b1f]" />, img: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80' },
 ];
 
