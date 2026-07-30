@@ -11,21 +11,29 @@ import EcoScore from './pages/ecoscore/ecoscore';
 import Reports from './pages/reports/reports';
 
 const Landing = lazy(() => import('./pages/landing/Landing'));
-const Login = lazy(() => import('./pages/login/Login')); 
+const Login = lazy(() => import('./pages/login/Login'));
+const DataCenterPage = lazy(() => import('./pages/datacenter/DataCenterPage'));
+const DataCenterDashboard = lazy(() => import('./pages/datacenter/DataCenterDashboard'));
 
 function App() {
   return (
-    <AuthProvider> {/* ← WRAP WITH AuthProvider */}
+    <AuthProvider>
       <Suspense fallback={<div className="min-h-screen bg-gradient-to-b from-slate-50 to-white flex items-center justify-center"><div className="w-8 h-8 rounded-full border-2 border-blue-600 border-t-transparent animate-spin" /></div>}>
         <Routes>
           {/* Public Routes */}
           <Route path="/" element={<Landing />} />
-          <Route path="/login" element={<Login />} /> {/* ← ADD THIS */}
+          <Route path="/login" element={<Login />} />
+          <Route path="/datacenter/:slug" element={<DataCenterPage />} />
 
           {/* Protected Routes */}
           <Route path="/scheduler" element={
             <ProtectedRoute>
               <Layout><Scheduler /></Layout>
+            </ProtectedRoute>
+          } />
+          <Route path="/dashboard/:slug" element={
+            <ProtectedRoute>
+              <Layout><DataCenterDashboard /></Layout>
             </ProtectedRoute>
           } />
           <Route path="/water" element={

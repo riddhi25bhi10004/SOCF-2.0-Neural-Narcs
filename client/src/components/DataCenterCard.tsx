@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Star } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import type { DataCenterData } from '../data/datacenters';
 
 interface DataCenterCardProps {
@@ -60,6 +61,21 @@ export default function DataCenterCard({ center, index }: DataCenterCardProps) {
                 />
               ))}
             </div>
+          </div>
+
+          <div className="grid gap-3 pt-2">
+            <Link
+              to={`/datacenter/${center.slug}`}
+              className="inline-flex items-center justify-center rounded-2xl bg-amber-400 px-4 py-3 text-sm font-semibold text-white shadow-lg shadow-amber-300/30 transition hover:bg-amber-500"
+            >
+              Get Started
+            </Link>
+            <Link
+              to={`/dashboard/${center.slug}`}
+              className="inline-flex items-center justify-center rounded-2xl border border-amber-200 bg-white px-4 py-3 text-sm font-semibold text-[#3f2e20] transition hover:border-amber-400 hover:bg-[#fff3dc]"
+            >
+              Launch Dashboard
+            </Link>
           </div>
         </div>
       </div>
