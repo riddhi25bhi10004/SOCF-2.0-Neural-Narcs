@@ -56,3 +56,37 @@ export interface EcoScoreBreakdown {
   hardwareHealth: number;
   overall: number;
 }
+
+// client/src/types/index.ts
+
+// Add to existing types
+export interface AIStatus {
+  status: 'idle' | 'optimizing' | 'completed';
+  message: string;
+  confidence: number;
+  carbonSaved: number;
+  peakLoad: {
+    start: string;
+    end: string;
+  };
+  suggestion: string;
+}
+
+export interface RackData {
+  id: string;
+  carbonIntensity: number;
+  status: 'low' | 'medium' | 'high';
+  jobs?: Job[];
+}
+
+// Export existing Job interface
+export interface Job {
+  id: string;
+  name: string;
+  type: 'AI Training' | 'Batch ETL' | 'Backup' | 'Inference';
+  start: string;
+  end: string;
+  rack: string;
+  power: number;
+  priority: number;
+}
