@@ -2,7 +2,7 @@ import { Suspense, useRef, useState, useEffect, useMemo } from 'react';
 import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import { Float } from '@react-three/drei';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom'; // ← CHANGED: added useNavigate
 import { ArrowRight, Sparkles, Server, Zap, Droplets, Leaf, ChevronDown, Activity, ShieldCheck, Cpu, Gauge } from 'lucide-react';
 import * as THREE from 'three';
 import ErrorBoundary from '../../components/ErrorBoundary';
@@ -200,6 +200,7 @@ function ScrollReveal({ children }: { children: React.ReactNode }) {
 
 function Landing() {
   const [scrolled, setScrolled] = useState(false);
+  const navigate = useNavigate(); // ← ADDED THIS
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 100);
@@ -219,7 +220,15 @@ function Landing() {
           </Link>
           <div className="flex items-center gap-4">
             <Link to="/dashboard" className="text-sm font-medium text-[#7e6143] transition-colors hover:text-[#c97a1d]">Dashboard</Link>
-            <Link to="/advisor" className="btn-primary inline-flex items-center gap-2 px-4 py-2 text-sm">Get Started</Link>
+            <Link to="/advisor" className="text-sm font-medium text-[#7e6143] transition-colors hover:text-[#c97a1d]">Advisor</Link>
+            {/* ← ADDED Login Button */}
+            <button 
+              onClick={() => navigate('/login')}
+              className="inline-flex items-center gap-2 rounded-lg border border-[#c97a1d]/30 bg-[#fff3d8] px-4 py-2 text-sm font-medium text-[#a96b16] transition-all hover:bg-[#f8e5be] hover:shadow-md"
+            >
+              Sign In
+            </button>
+            <Link to="/dashboard" className="btn-primary inline-flex items-center gap-2 px-4 py-2 text-sm">Get Started</Link>
           </div>
         </div>
       </nav>
