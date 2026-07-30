@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Grid3x3, AlertTriangle, TrendingDown, Zap } from 'lucide-react';
 import { fetchGridData } from '../../services/api';
 import MetricCard from '../../components/ui/MetricCard';
-import LineChart from '../../components/charts/LineChart';
+import LineChart from '../../components/chart/LineChart';
 
 function GridMonitor() {
   const [gridData, setGridData] = useState<any>(null);

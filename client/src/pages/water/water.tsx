@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Droplets, Sun, CloudRain, Wind } from 'lucide-react';
 import { fetchWaterData } from '../../services/api';
 import MetricCard from '../../components/ui/MetricCard';
-import LineChart from '../../components/charts/LineChart';
+import LineChart from '../../components/chart/LineChart';
 
 function WeatherWidget() {
   const temp = 22.4;

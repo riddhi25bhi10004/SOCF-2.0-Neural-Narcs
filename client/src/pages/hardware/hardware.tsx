@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Cpu, Server, HardDrive, Fan, Battery } from 'lucide-react';
 import { fetchHardware } from '../../services/api';
 import type { HardwareComponent } from '../../types';
-import HealthBar from '../../components/charts/HealthBar';
+import HealthBar from '../../components/chart/HealthBar';
 
 const componentIcons = {
   GPU: <Cpu className="w-5 h-5 text-eco-primary" />,

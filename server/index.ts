@@ -1,8 +1,8 @@
 import express from 'express';
 import cors from 'cors';
-import telemetryRouter, { setState, getState } from './routes/telemetry';
-import { createInitialState } from './data/telemetry';
-import { updateTelemetry } from './services/telemetryService';
+import telemetryRouter, { setState, getState } from './src/routes/telemetry';
+import { createInitialState } from './src/data/telemetry';
+import { updateTelemetry } from './src/services/telemetryService';
 
 const app = express();
 const PORT = process.env.PORT || 3001;

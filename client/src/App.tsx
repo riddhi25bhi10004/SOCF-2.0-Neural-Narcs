@@ -1,6 +1,6 @@
 import { lazy, Suspense } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
-import Layout from './components/layout/Layout';
+import Layout from './components/Layout/layout';
 import Dashboard from './pages/dashboard/Dashboard';
 import Advisor from './pages/advisor/Advisor';
 import Scheduler from './pages/scheduler/Scheduler';

@@ -4,8 +4,8 @@ import { Activity, Droplets, Snowflake, Cloud, Wind, Thermometer, Gauge } from '
 import { fetchTelemetry } from '../../services/api';
 import type { TelemetryData } from '../../types';
 import MetricCard from '../../components/ui/MetricCard';
-import LineChart from '../../components/charts/LineChart';
-import GaugeChart from '../../components/charts/GaugeChart';
+import LineChart from '../../components/chart/LineChart';
+import GaugeChart from '../../components/chart/GaugeChart';
 
 function Dashboard() {
   const [telemetry, setTelemetry] = useState<TelemetryData | null>(null);

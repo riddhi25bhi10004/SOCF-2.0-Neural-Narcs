@@ -3,9 +3,9 @@ import { motion } from 'framer-motion';
 import { Gauge as GaugeIcon, TrendingUp, TrendingDown } from 'lucide-react';
 import { fetchEcoScore } from '../../services/api';
 import type { EcoScoreBreakdown } from '../../types';
-import GaugeChart from '../../components/charts/GaugeChart';
-import HealthBar from '../../components/charts/HealthBar';
-import LineChart from '../../components/charts/LineChart';
+import GaugeChart from '../../components/chart/GaugeChart';
+import HealthBar from '../../components/chart/HealthBar';
+import LineChart from '../../components/chart/LineChart';
 
 function EcoScore() {
   const [scoreData, setScoreData] = useState<EcoScoreBreakdown | null>(null);
