@@ -140,7 +140,7 @@ function Scheduler() {
             <Cpu className="w-6 h-6 text-eco-primary" />
           </div>
           <div>
-            <h1 className="text-2xl font-bold text-eco-dark">AI Command Center</h1>
+            <h1 className="text-2xl font-bold text-eco-dark">Command Center</h1>
             <p className="text-sm text-eco-muted">Intelligent workload orchestration</p>
           </div>
         </div>
