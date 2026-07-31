@@ -87,7 +87,9 @@ function Water() {
     async function load() {
       try {
         const data = await fetchWaterData();
-        setWaterData(data as WaterData);
+        if (data) {
+          setWaterData(data as unknown as WaterData);
+        }
       } catch (error) {
         console.error('Failed to load water data:', error);
       } finally {
