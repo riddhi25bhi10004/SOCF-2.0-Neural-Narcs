@@ -36,6 +36,12 @@ function GaugeChart({ value, max = 100, label, color = '#2563eb', size = 200 }: 
     return segs;
   }, [size]);
 
+  // Scale text sizes with the gauge so the block fits in the safe zone
+  // near the bottom of the container (close to the flat baseline / cy),
+  // instead of the container's vertical center.
+  const valueFontSize = Math.max(size * 0.15, 14);
+  const labelFontSize = Math.max(size * 0.055, 8);
+
   return (
     <div className="flex flex-col items-center gap-2">
       <div className="relative" style={{ width: size, height: viewHeight }}>
@@ -70,16 +76,25 @@ function GaugeChart({ value, max = 100, label, color = '#2563eb', size = 200 }: 
           })}
         </svg>
 
-        <div className="absolute inset-0 flex flex-col items-center justify-center pb-3">
+        {/* Anchored to the bottom of the container (near cy), which is the
+            actual empty "safe zone" inside the arc's inner radius — instead
+            of the container's vertical center, which sits inside the band. */}
+        <div className="absolute inset-x-0 bottom-0 flex flex-col items-center justify-end pb-0.5 pointer-events-none">
           <motion.span
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.3, type: 'spring', stiffness: 200 }}
-            className="text-3xl font-bold font-mono text-eco-dark"
+            className="font-bold font-mono text-eco-dark leading-none"
+            style={{ fontSize: valueFontSize }}
           >
             {Math.round(value)}
           </motion.span>
-          <span className="text-xs text-eco-muted font-medium tracking-wide uppercase">{label}</span>
+          <span
+            className="text-eco-muted font-medium tracking-wide uppercase leading-tight"
+            style={{ fontSize: labelFontSize }}
+          >
+            {label}
+          </span>
         </div>
       </div>
     </div>
