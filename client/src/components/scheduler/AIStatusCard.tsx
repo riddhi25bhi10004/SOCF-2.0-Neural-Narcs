@@ -40,7 +40,7 @@ export default function AIStatusCard({ status, isOptimizing }: AIStatusProps) {
             )}
           </div>
           <div>
-            <p className="text-sm text-eco-muted">AI Status</p>
+            <p className="text-sm text-eco-muted">Status</p>
             <p className="font-semibold text-eco-dark">
               {isOptimizing ? 'Optimizing...' : status.status === 'completed' ? 'Optimized ✓' : 'Active'}
             </p>
