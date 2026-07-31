@@ -26,7 +26,7 @@ function Scheduler() {
     confidence: 96,
     carbonSaved: 18.4,
     peakLoad: { start: '14:00', end: '17:00' },
-    suggestion: 'Move AI Training to 22:00 for 31% cost reduction'
+    suggestion: 'Move Training to 22:00 for 31% cost reduction'
   });
 
   const [ref, inView] = useInView({
@@ -52,7 +52,7 @@ function Scheduler() {
   }, []);
 
   const analyzeWorkload = (jobs: Job[]) => {
-    // Simulate AI analysis - replace with actual logic
+    // Simulate  analysis - replace with actual logic
     const peakHours = findPeakHours(jobs);
     setAIStatus(prev => ({
       ...prev,
@@ -115,7 +115,7 @@ function Scheduler() {
   if (loading && !schedule) {
     return (
       <div className="flex items-center justify-center py-24">
-        <div className="glass p-8 animate-pulse">Loading AI Scheduler...</div>
+        <div className="glass p-8 animate-pulse">Loading  Scheduler...</div>
       </div>
     );
   }
@@ -159,7 +159,7 @@ function Scheduler() {
               className="btn-primary flex items-center gap-2"
             >
               <Wand2 className="w-4 h-4" />
-              {isOptimizing ? 'Optimizing...' : 'Run AI Optimization'}
+              {isOptimizing ? 'Optimizing...' : 'Run Optimization'}
             </button>
           ) : (
             <button
@@ -172,7 +172,7 @@ function Scheduler() {
         </div>
       </div>
 
-      {/* AI Status Cards */}
+      {/*  Status Cards */}
       <AIStatusCard status={aiStatus} isOptimizing={isOptimizing} />
 
       {/* Savings Counters - Animated */}
