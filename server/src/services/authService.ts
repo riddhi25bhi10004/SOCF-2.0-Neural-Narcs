@@ -43,6 +43,23 @@ export const findOrCreateUserByEmail = (
   return userWithoutPassword;
 };
 
+export const authenticateUser = (
+  email: string,
+  password: string
+): Omit<User, 'password'> | null => {
+  const normalizedEmail = email.trim().toLowerCase();
+  const user = users.find(
+    (u: User) => u.email.toLowerCase() === normalizedEmail && u.password === password
+  );
+
+  if (!user) {
+    return null;
+  }
+
+  const { password: _password, ...userWithoutPassword } = user;
+  return userWithoutPassword;
+};
+
 export const findOrCreateGoogleUser = (
   email: string,
   name?: string

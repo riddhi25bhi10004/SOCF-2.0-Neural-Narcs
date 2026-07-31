@@ -1,7 +1,7 @@
 import express, { Request, Response } from 'express';
 import {
+  authenticateUser,
   findOrCreateGoogleUser,
-  findOrCreateUserByEmail,
   generateToken,
 } from '../services/authService.js';
 
@@ -18,7 +18,14 @@ router.post('/login', async (req: Request, res: Response) => {
       });
     }
 
-    const user = findOrCreateUserByEmail(email, email.split('@')[0], password);
+    const user = authenticateUser(email, password);
+
+    if (!user) {
+      return res.status(401).json({
+        error: 'Invalid email or password',
+      });
+    }
+
     const token = generateToken(user.id);
 
     return res.json({
