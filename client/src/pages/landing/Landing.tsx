@@ -3,7 +3,7 @@ import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import { Float } from '@react-three/drei';
 import { motion } from 'framer-motion';
 import { Link, useNavigate } from 'react-router-dom'; // ← CHANGED: added useNavigate
-import { ArrowRight, Sparkles, Server, Zap, Droplets, Leaf, ChevronDown, Activity, ShieldCheck, Gauge } from 'lucide-react';
+import { ArrowRight, Sparkles, Zap, Droplets, Leaf, ChevronDown, Activity, ShieldCheck, Gauge } from 'lucide-react';
 import * as THREE from 'three';
 import ErrorBoundary from '../../components/ErrorBoundary';
 import DataCenterSection from '../../components/DataCenterSection';
@@ -183,39 +183,39 @@ const challenges = [
 
 const prithviDefs = [
   {
-    icon: <Server className="w-6 h-6" />,
-    title: 'P — Performance Assurance',
-    desc: 'AI-driven scheduling and hardware-aware placement that preserve SLAs while minimizing energy draw through predictive scaling.',
+    icon: <Zap className="w-6 h-6" />,
+    title: 'P — Power tracking',
+    desc: 'Continuously monitors energy usage and identifies where power is being wasted across infrastructure.',
   },
   {
     icon: <ShieldCheck className="w-6 h-6" />,
-    title: 'R — Resilience',
-    desc: 'Continuous anomaly detection, automated remediation playbooks, and outage simulations to keep services available.',
+    title: 'R — Resource regulation',
+    desc: 'Optimizes cooling, workload placement, and equipment usage to regulate resources efficiently.',
   },
   {
     icon: <Activity className="w-6 h-6" />,
-    title: 'I — Insights',
-    desc: 'Explainable analytics and root-cause diagnostics turn telemetry into concise, prioritized actions for operators.',
+    title: 'I — Impact monitoring',
+    desc: 'Tracks sustainability and operational impact so every action is measurable and accountable.',
   },
   {
     icon: <Gauge className="w-6 h-6" />,
-    title: 'T — Transparency',
-    desc: 'Unified metrics, audit trails, and automated ESG reports provide clear, auditable views of performance and impact.',
+    title: 'T — Temperature/weather control',
+    desc: 'Balances environmental conditions and climate-responsive controls to keep systems stable.',
+  },
+  {
+    icon: <Droplets className="w-6 h-6" />,
+    title: 'H — Hydrology (water)',
+    desc: 'Manages water flow, conservation, and cooling water usage with real-time intelligence.',
   },
   {
     icon: <Leaf className="w-6 h-6" />,
-    title: 'H — Holistic Efficiency',
-    desc: 'Multi-objective optimization balances energy, water, and carbon trade-offs across workloads and cooling systems.',
-  },
-  {
-    icon: <Gauge className="w-6 h-6" />,
-    title: 'V — Visibility',
-    desc: 'End-to-end observability across power, water, cooling and grid signals surfaces hidden waste and hotspots.',
+    title: 'V — Verification',
+    desc: 'Validates performance, compliance, and sustainability outcomes through transparent reporting.',
   },
   {
     icon: <Sparkles className="w-6 h-6" />,
-    title: 'I — Integration',
-    desc: 'Open connectors, APIs and adapters integrate with BMS, cloud, schedulers and third-party tools for seamless automation.',
+    title: 'I — Intelligence',
+    desc: 'Combines AI-driven insights with predictive decision-making for smarter autonomous operations.',
   },
 ];
 
